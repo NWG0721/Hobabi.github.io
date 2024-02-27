@@ -1,0 +1,32 @@
+/*
+
+                  (Colors)
+
+    Color 1 : 00FFCA    rgb(0, 255, 202)
+    Color 2 : 05BFDB    rgb(5, 191, 219)
+    Color 3 : 088395    rgb(8, 131, 149)
+    Color 4 : 0A4D68    rgb(10, 77, 104)
+        ITs used for background color and its blue
+
+*/
+
+/* 
+
+                  (Fonts)
+
+    Iranin Sans.tff
+        For all of website
+        Size
+*/
+@font-face {
+    font-family: "Iranian-Sans";
+    src: url(/Fonts/Iranian\ Sans.ttf);
+}
+body{
+    background-color:#0A4D68 ;
+    font-family: "Iranian-Sans";
+    font-size: medium;
+}
+.container{
+
+}
