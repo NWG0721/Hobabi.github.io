@@ -19,14 +19,17 @@
         Size
 */
 @font-face {
-    font-family: "Iranian-Sans";
-    src: url(/Fonts/Iranian\ Sans.ttf);
+  font-family: "Iranian-Sans";
+  src: url(/Fonts/Iranian\ Sans.ttf);
 }
-body{
-    background-color:#0A4D68 ;
-    font-family: "Iranian-Sans";
-    font-size: medium;
+body {
+  background-color: #0a4d68;
+  font-family: "Iranian-Sans";
+  font-size: medium;
 }
-.container{
-
+.container header div:nth-child(even) {
+  background-color: #088395;
+}
+.container header div:nth-child(odd) {
+    background: color #05bfdb; ;
 }
