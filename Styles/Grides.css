@@ -1,5 +1,24 @@
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 2px;    
+nav {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: 100px 100px;
+  column-gap: 2px;
+}
+.Home {
+  grid-column: 1/2;
+}
+.News {
+  grid-column: 2/3;
+}
+.Servers {
+  grid-column: 3/4;
+}
+.Games {
+  grid-column: 4/5;
+}
+.Merch {
+  grid-column: 5/6;
+}
+.AboutUs {
+  grid-column: 6/7;
 }

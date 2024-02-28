@@ -19,17 +19,47 @@
         Size
 */
 @font-face {
-  font-family: "Iranian-Sans";
-  src: url(/Fonts/Iranian\ Sans.ttf);
+  font-family: Iranian-Sans;
+  src: url(/Fonts/IranianSans.ttf);
+  font-family: BHalal;
+  src: url(/Fonts/BHalal.ttf);
 }
 body {
+  direction: rtl;
   background-color: #0a4d68;
-  font-family: "Iranian-Sans";
+  font-family: Iranian-Sans;
   font-size: medium;
+  filter: blur(50);
 }
-.container header div:nth-child(even) {
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: gold;
+  transform: scale(1.1);
+
+}
+header nav div {
+  font-family: BHalal;
+  font-size: xx-large;
+}
+header nav div:nth-child(even) {
   background-color: #088395;
+  /* transform: skew(-18deg); */
+  height: 99px;
+  border: 3px solid #05bfdb;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-.container header div:nth-child(odd) {
-    background: color #05bfdb; ;
+header nav div:nth-child(odd) {
+  background-color: #05bfdb;
+  height: 90px;
+  /* transform: skew(18deg); */
+  border: 3px solid #088395;
 }
