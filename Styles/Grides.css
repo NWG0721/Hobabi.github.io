@@ -1,7 +1,6 @@
 nav {
   display: grid;
   grid-template-columns: repeat(9, auto);
-  
 }
 
 .logobox {
@@ -24,4 +23,15 @@ nav {
 }
 .AboutUs {
   grid-column: 8/10;
+}
+/* ------------------------------------------------ */
+.picbox {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+.BigLogo {
+  grid-column: 2/3;
+}
+#Main-Text{
+  grid-column: 1/2;
 }
