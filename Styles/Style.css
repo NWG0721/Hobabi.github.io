@@ -6,7 +6,8 @@
     Color 2 : 05BFDB    rgb(5, 191, 219)
     Color 3 : 088395    rgb(8, 131, 149)
     Color 4 : 0A4D68    rgb(10, 77, 104)
-        ITs used for background color and its blue
+      Its used for background color and its blue
+    Color 5 : ffd700    rgb(255, 217, 0)
 
 */
 
@@ -30,36 +31,89 @@ body {
   font-family: Iranian-Sans;
   font-size: medium;
   filter: blur(50);
+  margin: auto;
+}
+.container {
+  margin: 0;
+}
+header::before,
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Pictures/HeaderPicture.jpeg);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+header::after {
+  background-color: rgba(10, 77, 104, 0.5); /* رنگ پس‌زمینه با بلور */
+}
+
+header {
+  margin: auto;
+  position: relative; /* اضافه کردن position برای قرارگیری درست بلور */
+  height: 700px;
+}
+nav::before,
+nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+
+  filter: blur(10px);
+}
+
+nav::after {
+  background-color: rgba(0, 0, 0, 0.5); /* رنگ پس‌زمینه با بلور */
+}
+
+nav {
+  position: relative;
+  border-bottom: 2px solid rgb(102, 0, 0);
+  border-bottom-left-radius:15px ;
+  border-bottom-right-radius:15px ;
 }
 nav > div {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: BHalal;
+  font-size: xx-large;
+  z-index: 2;
 }
 a {
   text-decoration: none;
   color: white;
 }
 a:hover {
-  color: gold;
+  color: #ffd900;
   transform: scale(1.1);
-
 }
-header nav div {
-  font-family: BHalal;
-  font-size: xx-large;
+.picbox img {
+  background-size: cover;
+  height: 700px;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+  width: 200%;
 }
 header nav div:nth-child(even) {
-  background-color: #088395;
-  /* transform: skew(-18deg); */
-  height: 99px;
-  border: 3px solid #05bfdb;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  /* background-color: #088395; */
+  height: 72px;
 }
 header nav div:nth-child(odd) {
-  background-color: #05bfdb;
-  height: 90px;
-  /* transform: skew(18deg); */
-  border: 3px solid #088395;
+  /* background-color: #05bfdb; */
+  height: 72px;
+}
+.MiniLogo {
+  margin-top: 30px;
+  height: 70px;
 }
