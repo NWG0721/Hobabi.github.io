@@ -27,17 +27,21 @@
   font-family: BHalal;
   src: url(/Fonts/BHalal.ttf);
 }
+@font-face {
+  font-family: AGhasem;
+  src: url(/Fonts/AGhasem.ttf);
+}
 body {
   direction: rtl;
   background-color: #0a4d68;
   margin: auto;
 }
-p{
-  font-family: Iranian-Sans;
-  font-size: medium;
+p {
+  font-family: AGhasem;
+  color: cyan;
 }
-#Main-Text{
-  font-size: 3rem;
+#Main-Text {
+  font-size: 5rem;
 }
 .container {
   margin: 0;
@@ -51,7 +55,7 @@ header::after {
   width: 100%;
   height: 100%;
   background-image: url(../Pictures/HeaderPicture.jpeg);
-  filter: blur(8px);
+  filter: blur(20px);
   z-index: -1;
 }
 
@@ -106,13 +110,6 @@ a:hover {
 .picbox img {
   scale: 0.6;
 }
-.picbox {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* افزودن وسط چینی در راستای عمودی */
-  justify-content: center;
-  text-align: center; /* وسط چینی متن */
-}
 header nav div {
   /* background-color: #05bfdb; */
   height: 72px;
@@ -120,4 +117,13 @@ header nav div {
 .MiniLogo {
   margin-top: 30px;
   height: 70px;
+}
+#MainText {
+  font-size: 4rem;
+  margin-right: 5%;
+  align-items: center;
+  justify-content: center;
+}
+.BigLogo {
+
 }

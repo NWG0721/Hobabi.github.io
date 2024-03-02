@@ -1,37 +1,25 @@
-nav {
+.container {
   display: grid;
-  grid-template-columns: repeat(9, auto);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 555px auto 400px;
 }
-
-.logobox {
-  grid-column: 1/3;
+header {
+  grid-column: 1/-1;
+  background-color: #8a2be2;
+  grid-row: 1;
 }
-.Home {
-  grid-column: 3/4;
+main {
+  grid-column: 1/9;
+  background-color: #00a9bf;
+  grid-row: 2;
 }
-.News {
-  grid-column: 4/5;
+aside {
+  grid-column: 9/13;
+  background-color: #970901;
+  grid-row: 2;
 }
-.Servers {
-  grid-column: 5/6;
-}
-.Games {
-  grid-column: 6/7;
-}
-.Merch {
-  grid-column: 7/8;
-}
-.AboutUs {
-  grid-column: 8/10;
-}
-/* ------------------------------------------------ */
-.picbox {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-}
-.BigLogo {
-  grid-column: 2/3;
-}
-#Main-Text{
-  grid-column: 1/2;
+footer {
+  grid-column: 1/13;
+  background-color: #4000ff;
+  grid-row:3;
 }

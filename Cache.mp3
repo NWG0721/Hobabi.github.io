@@ -1,0 +1,87 @@
+      <!-- <header>
+        <nav>
+          <div class="logobox">
+            <a href="#">
+              <img
+                src="/Pictures/Exporteds/MainPage/Logos/LogoMini1-1.png"
+                class="MiniLogo"
+                alt="logoPages"
+              />
+            </a>
+          </div>
+
+          <div class="Home" id="Home">
+            <a href="#">پرنه نخست</a>
+          </div>
+
+          <div class="News" id="News">
+            <a href="">آگاهی ها</a>
+          </div>
+
+          <div class="Servers" id="Servers">
+            <a href="">سرور</a>
+          </div>
+
+          <div class="Games" id="Games">
+            <a href="">بازی ها</a>
+          </div>
+
+          <div class="Merch" id="Merch">
+            <a href="">مَتا(مِرچ)</a>
+          </div>
+
+          <div class="AboutUs" id="AboutUs">
+            <a href="">درباره ما</a>
+          </div>
+        </nav>
+
+        <div class="picbox">
+          <p id="MainText">خوش اومدید</p>
+          <img
+            class="BigLogo"
+            src="/Pictures/Exporteds/MainPage/Logos/BigLogo1-1.png"
+            alt="There is no picture"
+          />
+        </div>
+
+      </header> -->
+
+
+      nav {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+}
+
+.logobox {
+  grid-column: 1/3;
+}
+.Home {
+  grid-column: 3/4;
+}
+.News {
+  grid-column: 4/5;
+}
+.Servers {
+  grid-column: 5/6;
+}
+.Games {
+  grid-column: 6/7;
+}
+.Merch {
+  grid-column: 7/8;
+}
+.AboutUs {
+  grid-column: 8/10;
+}
+/* ------------------------------------------------ */
+.picbox{
+  display: grid;
+  grid-template-columns: 1fr 2rem 1fr;
+  grid-template-rows: auto;
+}
+#MainText{
+grid-column: 2/3;
+}
+.BigLogo{
+  grid-column: 3/4;
+}
