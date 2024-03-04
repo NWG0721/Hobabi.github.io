@@ -1,3 +1,23 @@
-nav{
-    
+@media screen and (min-width: 1024px) {
+  /*------------------------------| The Nav Codes Are Here |------------------------------*/
+  /* .topOfheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+  } */
+  nav>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around ;
+  }
+  #Mini-Logo{
+    display: flex;
+    flex-direction: column;    }
+
+  /*------------------------------| The Nav Codes Are Here |------------------------------*/
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+@media screen and (max-width: 767px) {
 }
