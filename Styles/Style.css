@@ -32,13 +32,17 @@
   font-family: AGhasem;
   src: url(../Fonts/AGhasem.ttf);
 }
+@font-face {
+  font-family: Motley;
+  src: url(../Fonts/MotleyForcesRegular-w1rZ3.ttf);
+}
 /* Importing fonts */
 
 /* The Basic Styles */
 body {
   margin: auto;
   direction: rtl;
-  font-family: Iranian-Sans ;
+  font-family: Iranian-Sans;
 }
 ul {
   list-style: none;
@@ -76,12 +80,35 @@ ul a {
     margin-top: 3%;
     width: 100%;
     overflow: hidden;
-    border-radius: 50px 75px 25px 100px;
-    background-image: linear-gradient(to right,#ff0000,#48e3ff);
     height: 69px;
     text-align: center;
   }
-  
+  #MusicPlayer {
+    margin-top: 3%;
+    width: 100%;
+    justify-content: end;
+    align-items: end;
+    height: 85px;
+    font-family: Motley;
+    direction: ltr;
+    color: #000000;
+  }
+  #MusicPlayer h3{
+    margin-left: 4%;
+    margin-top: 3%;
+    display: inline;
+  }
+  #MusicPlayer audio {
+    display: none;
+  }
+  aside div:nth-child(even){
+    border-radius: 50px 75px 25px 100px;
+    background-image: linear-gradient(to right, #ff0000, #48e3ff);
+  }
+  aside div:nth-child(odd){
+    border-radius: 75px 50px 100px 25px;
+    background-image: linear-gradient(to right, #48e3ff,#ff0000);
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 }
@@ -89,4 +116,3 @@ ul a {
 }
 /*------------------------------| The Main Codes Are Here |------------------------------*/
 /* Vector 1 */
-
