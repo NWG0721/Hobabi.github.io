@@ -27,7 +27,6 @@
 @font-face {
   font-family: BHalal;
   src: url(../Fonts/BHalal.ttf);
-
 }
 @font-face {
   font-family: AGhasem;
@@ -35,66 +34,59 @@
 }
 /* Importing fonts */
 
-
 /* The Basic Styles */
-body{
+body {
   margin: auto;
   direction: rtl;
+  font-family: Iranian-Sans ;
 }
-ul{
+ul {
   list-style: none;
   font-family: BHalal;
 }
-ul a{
+ul a {
   text-decoration: none;
-  color: #ffffff;
+  color: #ffae00;
 }
 
 /* The Basic Styles */
 
-
 /*------------------------------| The Main Codes Are Here |------------------------------*/
 @media screen and (min-width: 1024px) {
-  #Mini-Logo img{
+  #Mini-Logo img {
     height: 75px;
     margin-left: 30%;
     margin-right: 70%;
-   margin-top: 5%;
-    }
-  nav>ul{
-    font-size:x-large;
-  } 
-  nav>ul>li>a:hover{
+    margin-top: 5%;
+  }
+  nav > ul {
     font-size: 25px;
-    color: aqua;
-  } 
-} 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-
-}
-@media screen and (max-width: 767px) {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 72px 900px 200px;
+  }
+  nav > ul > li > a:hover {
+    font-size: 30px;
+    color: rgb(0, 94, 255);
+  }
+  #Mini-Logo:hover {
+    transform: scale(1.1, 1.1);
   }
   header {
-    grid-column: 1/-1;
-    background-color: #8a2be2;
-    grid-row: 1;
+    background-image: url(../Pictures/HeaderPicture.jpeg);
   }
-  main {
-    grid-column: 1/-1;
-    background-color: #00a9bf;
-    grid-row: 2;
+  div.Rand-Text {
+    margin-top: 3%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50px 75px 25px 100px;
+    background-image: linear-gradient(to right,#ff0000,#48e3ff);
+    height: 69px;
+    text-align: center;
   }
-  aside {
-    display: none;
-  }
-  footer {
-    grid-column: 1/13;
-    background-color: #4000ff;
-    grid-row: 3;
-  }
+  
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+@media screen and (max-width: 767px) {
 }
 /*------------------------------| The Main Codes Are Here |------------------------------*/
+/* Vector 1 */
+
