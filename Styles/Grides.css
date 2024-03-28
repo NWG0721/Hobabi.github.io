@@ -2,7 +2,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 600px 900px 400px;
+    grid-template-rows: 800px 900px 400px;
   }
 
   header {
