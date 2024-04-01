@@ -62,13 +62,13 @@ ul a {
     margin-left: 30%;
     margin-right: 70%;
     margin-top: 4%;
-    margin-bottom:1% ;
+    margin-bottom: 1%;
   }
   nav > ul {
     font-size: 25px;
   }
   nav > ul > li > a:hover {
-    font-size: 2rem; 
+    font-size: 2rem;
     color: rgb(0, 94, 255);
   }
   #Mini-Logo:hover {
@@ -76,7 +76,7 @@ ul a {
   }
   header {
     /* background-image: url(../Pictures/HeaderPicture.jpeg); */
-    background-color:#0A4D68 ;
+    background-color: #0a4d68;
   }
   div.Rand-Text {
     margin-top: 3%;
@@ -88,9 +88,9 @@ ul a {
   #MusicPlayer {
     margin-top: 3%;
     width: 100%;
-    justify-content: end;
-    align-items: end;
-    height: 85px;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
     font-family: Motley;
     direction: ltr;
     color: #000000;
@@ -103,16 +103,18 @@ ul a {
   #MusicPlayer audio {
     display: none;
   }
-  aside div:nth-child(even) {
+  aside > div:nth-child(odd) {
     border-radius: 50px 75px 25px 100px;
-    background-image: linear-gradient(to right, #ff0000, #48e3ff);
+    background-color: #05bfdb;
   }
-  aside div:nth-child(odd) {
+
+  aside > div:nth-child(even){
     border-radius: 75px 50px 100px 25px;
-    background-image: linear-gradient(to right, #48e3ff, #ff0000);
+    background-color: #088395;
   }
+
   .top-head {
-    border-bottom: 3px #05BFDB solid;
+    border-bottom: 3px #05bfdb solid;
     border-radius: 45px;
   }
 }
