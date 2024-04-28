@@ -2,43 +2,68 @@
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 800px 900px 400px;
+    grid-template-rows: 69px 800px auto 400px;
+  }
+  .loginAndsearch {
+    grid-column: 1/-1;
+    grid-row: 1;
+    /* background-color: #8a2be2; */
   }
 
   header {
     grid-column: 1/-1;
     /* background-color: #8a2be2; */
-    grid-row: 1;
+    grid-row: 2;
   }
   main {
-    grid-column: 1/9;
-    background-color: #00a9bf;
-    grid-row: 2;
+    grid-column: 4/13;
+    background-color: #9cd9eb;
+    grid-row: 3;
   }
   aside {
-    grid-column: 9/13;
-    background-color: #970901;
-    grid-row: 2;
+    /* background-color: #970901; */
+    grid-column: 1/4;
+    background-color: #9cd9eb;
+    grid-row: 3;
   }
   footer {
     grid-column: 1/13;
-    background-color: #4000ff;
-    grid-row: 3;
-    
+    background-color: #0A4D68;
+    grid-row: 4;
   }
   /*------------------------------| End TopCode/Start BottomCode |------------------------------*/
-  .top-head{
+  .top-head {
     display: grid;
-    grid-template-columns:repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
   }
-  #Mini-Logo{
+  #Mini-Logo {
     grid-column: 1/2;
   }
-  .top-head nav{
+  .top-head nav {
     grid-column: 3/13;
   }
+
+  .TheTopofSite {
+    display: grid;
+    grid-template-columns: 4fr auto 1fr;
+    grid-template-rows: 60px;
+  }
+
+  .loginAndsearch > ul > .Login-And-Register {
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+  .loginAndsearch > ul > .Search {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+  .loginAndsearch > ul > .Sosia-lMedia {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .container {
     display: grid;
@@ -65,7 +90,7 @@
     grid-column: 1/13;
     background-color: #4000ff;
     grid-row: 4;
-  } 
+  }
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -86,7 +111,7 @@
   aside {
     display: none;
   }
-  .container .banner{
+  .container .banner {
     display: none;
   }
   footer {

@@ -1,0 +1,172 @@
+/*
+
+                  (Colors)
+
+    Color 1 : 00FFCA    rgb(0, 255, 202)
+    Color 2 : 05BFDB    rgb(5, 191, 219)
+    Color 3 : 088395    rgb(8, 131, 149)
+    Color 4 : 0A4D68    rgb(10, 77, 104)
+    Color 5 : ffd700    rgb(255, 217, 0)
+    Color 6 : 9cdbec    rgb(156, 208, 190)
+      Its used for background color and its blue
+
+*/
+
+/* 
+
+                  (Fonts)
+
+    Iranin Sans.tff
+        For all of website
+        Size
+*/
+/* Importing fonts */
+@font-face {
+  font-family: Iranian-Sans;
+  src: url(../Fonts/IranianSans.ttf);
+}
+@font-face {
+  font-family: BHalal;
+  src: url(../Fonts/BHalal.ttf);
+}
+@font-face {
+  font-family: AGhasem;
+  src: url(../Fonts/AGhasem.ttf);
+}
+@font-face {
+  font-family: Motley;
+  src: url(../Fonts/MotleyForcesRegular-w1rZ3.ttf);
+}
+/* Importing fonts */
+
+/* The Basic Styles */
+body {
+  margin: auto;
+  direction: rtl;
+  font-family: Iranian-Sans;
+}
+ul {
+  list-style: none;
+  font-family: BHalal;
+}
+ul a {
+  text-decoration: none;
+  color: #0099b1;
+}
+
+.banner > img {
+  width: 100%;
+}
+
+/* The Basic Styles */
+
+/*------------------------------| The Main Codes Are Here |------------------------------*/
+@media screen and (min-width: 1024px) {
+  /*------------------------------| SECTION ONE |------------------------------*/
+
+  .loginAndsearch {
+    background-color: #05bfdb;
+  }
+
+  .TheTopofSite {
+    margin-top: 0.15%;
+  }
+
+  .loginAndsearch > ul > .Login-And-Register {
+    background-color: #00ffca;
+    border-radius: 35px;
+  }
+
+  .Login-And-Register > div > ul > li > div > a {
+    font-size: 1.5rem;
+  }
+  .SignUp {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-right: #05bfdb 5px solid;
+    padding-right: 9px;
+  }
+  .SignIn {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left: #05bfdb 5px solid;
+    padding-left: 9px;
+  }
+
+  .SignUp > a:hover {
+    border-top-right-radius: 20px;
+    padding-right: 9px;
+    color: #0a4d68;
+  }
+  .SignIn > a:hover {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 9px;
+    color: #0a4d68;
+  }
+
+  /*------------------------------| SECTION TWO |------------------------------*/
+  #Mini-Logo img {
+    height: 75px;
+    margin-left: 30%;
+    margin-right: 70%;
+    margin-top: 4%;
+    margin-bottom: 1%;
+  }
+  nav > ul {
+    font-size: 25px;
+  }
+  nav > ul > li > a:hover {
+    font-size: 2rem;
+    color: rgb(0, 94, 255);
+
+  }
+  #Mini-Logo:hover {
+    transform: scale(1.1, 1.1);
+  }
+  header {
+    /* background-image: url(../Pictures/HeaderPicture.jpeg); */
+    background-color: #9cdbec;
+  }
+  .Rand-Text {
+    /* margin-top: 50%; */
+    /* height: auto; */
+    text-align: center;
+  }
+  .Rand-Text > p {
+    width: 69%;
+    display: inline-block;
+    font-size: 2rem;
+  }
+
+  aside > div:nth-child(odd) {
+    /* border-radius: 50px 75px 25px 100px; */
+    /* background-color: #05bfdb; */
+    background-image: url("../Pictures/Exporteds/Hobabi-Side-Bar/Hobabi-Side-Bar-Light.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 100% 100%;
+    height: 300px;
+  }
+
+  aside > div:nth-child(even) {
+    /* border-radius: 75px 50px 100px 25px; */
+    /* background-color: #088395; */
+    background-image: url("../Pictures/Exporteds/Hobabi-Side-Bar/Hobabi-Side-Bar-Dark.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 100% 100%;
+    height: 300px;
+  }
+
+  .top-head {
+    border-bottom: 3px #05bfdb solid;
+    border-radius: 45px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+@media screen and (max-width: 767px) {
+}
+/*------------------------------| The Main Codes Are Here |------------------------------*/
+/* Vector 1 */

@@ -1,0 +1,18 @@
+  #MusicPlayer {
+    margin-top: 3%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-family: Motley;
+    direction: ltr;
+    color: #000000;
+  }
+  #MusicPlayer h3 {
+    margin-left: 4%;
+    margin-top: 3%;
+    display: inline;
+  }
+  #MusicPlayer audio {
+    display: none;
+  }
