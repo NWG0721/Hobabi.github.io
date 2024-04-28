@@ -31,12 +31,16 @@
     margin-top: 1%;
   }
 
-
-  .Rand-Text{
+  .Rand-Text {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  .top-head {
+    display: flex;
+flex-direction: row;
+align-items: center;
   }
   /*------------------------------| The Nav Codes Are Here |------------------------------*/
 }
