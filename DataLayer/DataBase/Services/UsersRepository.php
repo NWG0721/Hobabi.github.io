@@ -8,9 +8,9 @@ class UsersRepository implements IUsersRepositoy
 
     private mysqli $connectionString;
 
-    public function __construct(mysqli $connection)
+    public function __construct($connectionString)
     {
-        $connectionString = $connection;
+        $this -> $connectionString = $connectionString;
     }
 
     public function selectAll(string $connectionString): array

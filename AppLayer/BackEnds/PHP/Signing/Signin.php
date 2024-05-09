@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
     {
 
         include("./../../../../DataLayer/DataBase/Services/UsersRepository.php");
-
+        $db = new UsersRepository();
     }
 }
 

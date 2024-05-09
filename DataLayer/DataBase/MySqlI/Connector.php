@@ -1,19 +1,23 @@
 <?php
+class Connector
+{
 
-//------------------| Connection Entities |------------------\\
-$dataBaseAddress = 'localhost';
-$dataBaseUsername = 'root';
-$dataBasePassword = '';
-$dataBaseName = 'hobabi_db';
-//------------------| Connection Entities |------------------\\
+    //------------------| Connection Entities |------------------\\
+    private $dataBaseAddress = 'localhost';
+    private $dataBaseUsername = 'root';
+    private $dataBasePassword = '';
+    private $dataBaseName = 'hobabi_db';
+    //------------------| Connection Entities |------------------\\
+    private $connectionString;
 
-//------------------| Connection String |------------------\\
-$connectionString = mysqli_connect($dataBaseAddress, $dataBaseUsername, $dataBasePassword, $dataBaseName);
-if (mysqli_connect_errno()) {
-
-    printf('Error has been planted', mysqli_connect_error());
+    private function connectionMaker()
+    {
+        $this->connectionString = mysqli_connect($this->dataBaseAddress, $this->dataBaseUsername, $this->dataBasePassword, $this->dataBaseName);
+    }
+    public function getConnectionString()
+    {
+        return $this->connectionString;
+    }
 
 }
-//------------------| Connection String |------------------\\
-
 ?>
