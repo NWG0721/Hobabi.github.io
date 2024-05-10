@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="AppLayer/Styles/Grides.css" />
     <link rel="stylesheet" href="AppLayer/Styles/Flex.css" />
     <link rel="stylesheet" href="AppLayer/Styles/MusicPlayer.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- The CSS Part -->
 </head>
 
 <body onload="RandomTextForAside()">
     <!-- The Main Body Starts Here -->
-    <div class="container">
+    <div class="container max-w-full">
         <div class="loginAndsearch">
             <ul class="TheTopofSite">
                 <li class="Login-And-Register">
