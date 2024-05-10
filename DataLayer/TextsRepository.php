@@ -15,18 +15,18 @@ class TextsRepository
     public function selectAll(): array
     {
         $query = "SELECT * FROM write_tbl";
-        return Mysqli_query($this->connector(), $query);
+        return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
     }
 
     public function selectPublished(): array
     {
-        $query = "SELECT * FROM write_tbl WHERE USER_NAME = '$userName' AND USER_PASS = '$passWord'";
+        $query = "SELECT * FROM write_tbl WHERE WRITE_STATUS = '45'";
         return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
 
     }
 
     public function selectByTitle(string $userName): array
-    {
+    {   
         $query = "SELECT * FROM write_tbl WHERE USER_NAME = '$userName' LIMIT 1";
         return Mysqli_query($this->connector(), $query);
     }

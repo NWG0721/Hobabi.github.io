@@ -1,6 +1,10 @@
 <?php
+session_start();
+?>
 
-include ("C:\\xampp\htdocs\Hobabi\DataLayer\UsersRepository.php");
+<?php
+
+include ("../../../../DataLayer/UsersRepository.php");
 
 $validation = array('UserNameValid' => '', 'PassWordValid' => '');
 if (isset($_POST["submit"])) {
@@ -18,6 +22,8 @@ if (isset($_POST["submit"])) {
         $db = new UsersRepository();
         echo ("<script> alert($userName and $passWord);</script>");
         if ($db->userChecker($userName, $passWord)) {
+            $res = $db->selectByUserName($userName);
+            $_SESSION['USER_ID']     = $res['USER_ID'];
             echo ("<script> window.location.replace('./../AdminPanel/AdminPanel.php');</script>");
         } else {
             $validation['UserNameValid'] = 'UserName is not valid';
