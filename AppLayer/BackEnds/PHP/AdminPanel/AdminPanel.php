@@ -28,6 +28,7 @@ $res = $cDB->select();
     <link rel="stylesheet" href="../../../Styles/src/output.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="../../../Styles/FastStyles.css">
+
 </head>
 
 <body dir="rtl">
@@ -54,7 +55,7 @@ $res = $cDB->select();
                         </div>
                         <div
                             class="m-15 mt-16 text-xl text-amber-300 hover:text-2xl p-4 px-20 border-y-2 border-cyan-300 cursor-pointer">
-                            <li onclick="">درون جعبه</li>
+                            <li onclick="_inbox()">درون جعبه</li>
                         </div>
                         <div
                             class="m-15 mt-16 text-xl text-amber-300 hover:text-2xl p-4 px-20 border-y-2 border-cyan-300 cursor-pointer">
@@ -75,6 +76,53 @@ $res = $cDB->select();
         <div class="container max-w-full p-0 m-0  top-0 col-start-3 col-end-13 row-start-1 row-end-4">
             <div class="text-center text-4xl mt-20">
                 <p>به صفحه کمانی خود خوش آمدید</p>
+            </div>
+
+
+            <div class="hidden" id="Inbox">
+                <div
+                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
+                    <div class="container mx-auto p-20 pt-96">
+                        <div class="grid grid-cols-1 gap-4">
+                            <?php
+                            include '../../../../DataLayer/MassageRepository.php';
+                            $msgDB = new MassageRepository();
+                            include '../Carts/MessageCarts.php';
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
+                        <div>
+                            <li>
+                                <button onclick="Redirect()"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودن</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <button onclick="Refresh()"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">نوآوری</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <button onclick="UpDatediraction(<?php echo $id; ?>)"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">آرایش</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <form action="#" method="Post">
+                                    <button type="submit" name="Delete"
+                                        class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
+                                </form>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
             </div>
 
             <div class="" id="Writes">
@@ -170,7 +218,7 @@ $res = $cDB->select();
                                 value="<?php echo $res['CONTENTS_FOOTER2']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
-                        <div    
+                        <div
                             class="left-[660px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed7" name="feed7" type="text" required placeholder="فید 7"
                                 value="<?php echo $res['CONTENTS_FOOTER3']; ?>"
@@ -189,56 +237,14 @@ $res = $cDB->select();
                         </ul>
                     </div>
                 </form>
-
             </div>
-            <div class="hidden" id="Inbox">
-                <div
-                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
-                    <div class="container mx-auto p-20 pt-96">
-                        <div class="grid grid-cols-1 gap-4">
-                            <?php
-                            include '../../../../DataLayer/MassageRepository.php';
-                            $msgDB = new MassageRepository();
-                            include '../Carts/MessageCarts.php';
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
-                        <div>
-                            <li>
-                                <button onclick="Redirect()"
-                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودن</button>
-                            </li>
-                        </div>
-                        <div>
-                            <li>
-                                <button onclick="Refresh()"
-                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">نوآوری</button>
-                            </li>
-                        </div>
-                        <div>
-                            <li>
-                                <button onclick="UpDatediraction(<?php echo $id; ?>)"
-                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">آرایش</button>
-                            </li>
-                        </div>
-                        <div>
-                            <li>
-                                <form action="#" method="Post">
-                                    <button type="submit" name="Delete"
-                                        class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
-                                </form>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
 
-            </div>
         </div>
     </div>
     </div>
+
+    <script src="../../../Javascripts/Addminpan.js">
+    </script>
 </body>
 <?php
 if (isset($_POST['save-Mainpage'])) {
@@ -291,43 +297,7 @@ if (isset($_POST['save-Mainpage'])) {
     }
 }
 ?>
-<script src="../Javascripts/Addminpan.js">
-    function Redirect() {
-        window.location.replace("../AppWrite/AddWrite.php");
-    }
-    function Refresh() {
-        window.location.Refresh();
-    }
-    function UpDateAndDelete(id) {
-        window.location.replace("../AdminPanel/AdminPanel.php?ID=" + id);
-    }
-    function UpDatediraction(id) {
-        window.location.replace("../AppWrite/EditWrite.php?ID=" + id);
-    }
 
-    let write = document.getElementById("Writes");
-    let contacts = document.getElementById("Contacts");
-    let Inbox = document.getElementById("Inbox");
-
-    function Writes() {
-        write.classList.toggle("visible");
-        contacts.classList.add("hidden");
-        Inbox.classList.add("hidden");
-    }
-
-    function Contacts() {
-        contacts.classList.toggle("visible");
-        write.classList.add("hidden");
-        Inbox.classList.add("hidden");
-    }
-
-    function Inbox() {
-        Inbox.classList.toggle("visible");
-        write.classList.add("hidden");
-        contacts.classList.add("hidden");
-    }
-
-</script>
 
 </html>
 

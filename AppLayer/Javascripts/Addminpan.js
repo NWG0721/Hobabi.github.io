@@ -2,33 +2,27 @@ function Redirect() {
   window.location.replace("../AppWrite/AddWrite.php");
 }
 function Refresh() {
-  window.location.Refresh();
+  window.location.replace("../AdminPanel/AdminPanel.php");
 }
 function UpDateAndDelete(id) {
   window.location.replace("../AdminPanel/AdminPanel.php?ID=" + id);
 }
-function UpDatediraction(id) {
-  window.location.replace("../AppWrite/EditWrite.php?ID=" + id);
-}
 
 let write = document.getElementById("Writes");
 let contacts = document.getElementById("Contacts");
-let Inbox = document.getElementById("Inbox");
-
+let InBox = document.getElementById("InBox");
 function Writes() {
-  write.classList.toggle("visible");
-  contacts.classList.add("hidden");
-  Inbox.classList.add("hidden");
+  write.className = "visible";
+  contacts.className = "hidden";
+  InBox.className = "hidden";
 }
-
 function Contacts() {
-  contacts.classList.toggle("visible");
-  write.classList.add("hidden");
-  Inbox.classList.add("hidden");
+  write.className = "hidden";
+  contacts.className = "visible";
+  InBox.className = "hidden";
 }
-
-function Inbox() {
-  Inbox.classList.toggle("visible");
-  write.classList.add("hidden");
-  contacts.classList.add("hidden");
+function _inbox() {
+  write.className = "hidden";
+  contacts.className = "hidden";
+  InBox.className = "";
 }

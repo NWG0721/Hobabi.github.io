@@ -13,7 +13,7 @@ if (!$Writes) {
         echo ("<div class='w-full h-80 relative mx-auto mt-10 pt-72'>
         <div class='w-full h-80 left-0 top-64 relative bg-teal-200 rounded-[2.313rem] '>
         
-            <div class='flex flex-row jus' onclick='UpDateAndDelete($id)'>
+            <div class='flex flex-row'>
                 <div>
         
                     <div class='left-[500px] top-[66px] mt-6 mr-8 text-black text-4xl font-normal font-['Inter']'>
