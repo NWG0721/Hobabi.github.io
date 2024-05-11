@@ -38,8 +38,16 @@ class UsersRepository
     public function selectByParameters(string $Parameter): array
     {
         $query = "SELECT * FROM users_tbl WHERE USER_NAME = '$Parameter' OR USER_ID = '$Parameter' LIMIT 1";
-        return mysqli_query($this->connector(), $query);
+        $result = mysqli_query($this->connector(), $query);
+        
+        $rows = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $rows[] = $row;
+        }
+        
+        return $rows;
     }
+    
 
     public function updateUser($userID, $userName, $userPass, $userRole): bool
     {
