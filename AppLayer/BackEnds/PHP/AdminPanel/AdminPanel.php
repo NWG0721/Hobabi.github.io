@@ -13,7 +13,7 @@ if (isset($_POST['Delete'])) {
     }
 }
 $cDB = new ContactsRepository();
-$res = $cDB->selectAll();
+$res = $cDB->select();
 
 ?>
 
@@ -77,7 +77,7 @@ $res = $cDB->selectAll();
                 <p>به صفحه کمانی خود خوش آمدید</p>
             </div>
 
-            <div class="hidden" id="Writes">
+            <div class="" id="Writes">
                 <div
                     class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
                     <div class="container mx-auto p-20 pt-96">
@@ -104,7 +104,7 @@ $res = $cDB->selectAll();
                         </div>
                         <div>
                             <li>
-                                <button onclick="UpDatediraction(<?php echo$id;?>)"
+                                <button onclick="UpDatediraction(<?php echo $id; ?>)"
                                     class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">آرایش</button>
                             </li>
                         </div>
@@ -131,49 +131,49 @@ $res = $cDB->selectAll();
                         </div>
                         <div
                             class="w-[246px] h-[313px] left-[38px] top-[150px] absolute bg-teal-600 rounded-[48px] flex flex-col justify-center">
-                            <img src="<?php echo $res[0]['CONTENTS_HEADPIC']; ?>" alt="">
+                            <img src="<?php echo $res['CONTENTS_HEADPIC']; ?>" alt="">
                             <input type="file">
                         </div>
                         <div
                             class="left-[709px] top-[89px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed1" name="feed1" type="text" required placeholder="فید 1"
-                                value="<?php echo $res[0]['CONTENTS_FEEDER1']; ?>"
+                                value="<?php echo $res['CONTENTS_FEEDER1']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[709px] top-[160px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed2" name="feed2" type="text" required placeholder="فید 2"
-                                value="<?php echo $res[0]['CONTENTS_FEEDER2']; ?>"
+                                value="<?php echo $res['CONTENTS_FEEDER2']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[708px] top-[256px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed3" name="feed3" type="text" required placeholder="فید 3"
-                                value="<?php echo $res[0]['CONTENTS_FEEDER3']; ?>"
+                                value="<?php echo $res['CONTENTS_FEEDER3']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[659px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed4" name="feed4" type="text" required placeholder="فید 4"
-                                value="<?php echo $res[0]['CONTENTS_FOOTER']; ?>"
+                                value="<?php echo $res['CONTENTS_FOOTER']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[226px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed5" name="feed5" type="text" required placeholder="فید 5"
-                                value="<?php echo $res[0]['CONTENTS_FOOTER1']; ?>"
+                                value="<?php echo $res['CONTENTS_FOOTER1']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[226px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed6" name="feed6" type="text" required placeholder="فید 6"
-                                value="<?php echo $res[0]['CONTENTS_FOOTER2']; ?>"
+                                value="<?php echo $res['CONTENTS_FOOTER2']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
-                        <div
+                        <div    
                             class="left-[660px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed7" name="feed7" type="text" required placeholder="فید 7"
-                                value="<?php echo $res[0]['CONTENTS_FOOTER3']; ?>"
+                                value="<?php echo $res['CONTENTS_FOOTER3']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                     </div>
@@ -191,13 +191,58 @@ $res = $cDB->selectAll();
                 </form>
 
             </div>
+            <div class="hidden" id="Inbox">
+                <div
+                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
+                    <div class="container mx-auto p-20 pt-96">
+                        <div class="grid grid-cols-1 gap-4">
+                            <?php
+                            include '../../../../DataLayer/MassageRepository.php';
+                            $msgDB = new MassageRepository();
+                            include '../Carts/MessageCarts.php';
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
+                        <div>
+                            <li>
+                                <button onclick="Redirect()"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودن</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <button onclick="Refresh()"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">نوآوری</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <button onclick="UpDatediraction(<?php echo $id; ?>)"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">آرایش</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <form action="#" method="Post">
+                                    <button type="submit" name="Delete"
+                                        class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
+                                </form>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
     </div>
 </body>
 <?php
 if (isset($_POST['save-Mainpage'])) {
-    $success;
+    $success = false;
     if (isset($_FILES["imageFile"])) {
 
         $targetDirectory = "./../../../Pictures/Source/";
@@ -220,7 +265,7 @@ if (isset($_POST['save-Mainpage'])) {
                 $CONTENTS_FOOTER3 = $_POST['feed7'];
 
                 $success = $cDB->updateContents(
-                    0,
+                    1,
                     $CONTENTS_FOOTER,
                     $CONTENTS_FEEDER1,
                     $CONTENTS_HEADPIC,
@@ -231,7 +276,6 @@ if (isset($_POST['save-Mainpage'])) {
                     $CONTENTS_FOOTER3
                 );
 
-                echo ("<script> window.location.replace('../AdminPanel/AdminPanel.php');</script>");
             } else {
                 echo "متاسفانه، مشکلی در آپلود فایل شما رخ داده است.";
             }
@@ -239,14 +283,49 @@ if (isset($_POST['save-Mainpage'])) {
     } else {
         echo "فایلی انتخاب نشده است.";
     }
+
     if ($success) {
-        echo "<script>alert('با موفقیت به‌روزرسانی شد!');</script>";
+        echo "<script>alert('با موفقیت به‌روزرسانی شد! ');</script>";
     } else {
-        echo "<script>alert('خطا در به‌روزرسانی!');</script>";
+        echo "<script>alert('خطا در به‌روزرسانی! $success');</script>";
     }
 }
 ?>
-<script src="../../../Javascripts/Addminpan.js">
+<script src="../Javascripts/Addminpan.js">
+    function Redirect() {
+        window.location.replace("../AppWrite/AddWrite.php");
+    }
+    function Refresh() {
+        window.location.Refresh();
+    }
+    function UpDateAndDelete(id) {
+        window.location.replace("../AdminPanel/AdminPanel.php?ID=" + id);
+    }
+    function UpDatediraction(id) {
+        window.location.replace("../AppWrite/EditWrite.php?ID=" + id);
+    }
+
+    let write = document.getElementById("Writes");
+    let contacts = document.getElementById("Contacts");
+    let Inbox = document.getElementById("Inbox");
+
+    function Writes() {
+        write.classList.toggle("visible");
+        contacts.classList.add("hidden");
+        Inbox.classList.add("hidden");
+    }
+
+    function Contacts() {
+        contacts.classList.toggle("visible");
+        write.classList.add("hidden");
+        Inbox.classList.add("hidden");
+    }
+
+    function Inbox() {
+        Inbox.classList.toggle("visible");
+        write.classList.add("hidden");
+        contacts.classList.add("hidden");
+    }
 
 </script>
 

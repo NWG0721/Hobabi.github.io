@@ -15,15 +15,13 @@ class MassageRepository
     public function selectAll(): array
     {
         $query = "SELECT * FROM massage_tbl";
-        return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
+        $result = mysqli_query($this->connector(), $query);
+        if (!$result) {
+            return [];
+        }
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    public function selectPublished(): array
-    {
-        // $query = "SELECT * FROM massage_tbl WHERE WRITE_STATUS = '45'";
-        // return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
-
-    }
 
     public function selectByParameter(string $parameter): array
     {   

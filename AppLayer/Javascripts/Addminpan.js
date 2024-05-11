@@ -2,7 +2,7 @@ function Redirect() {
   window.location.replace("../AppWrite/AddWrite.php");
 }
 function Refresh() {
-  window.location.replace("../AdminPanel/AdminPanel.php");
+  window.location.Refresh();
 }
 function UpDateAndDelete(id) {
   window.location.replace("../AdminPanel/AdminPanel.php?ID=" + id);
@@ -13,19 +13,22 @@ function UpDatediraction(id) {
 
 let write = document.getElementById("Writes");
 let contacts = document.getElementById("Contacts");
+let Inbox = document.getElementById("Inbox");
+
 function Writes() {
-  if (write.className == "hidden") {
-    write.className = "visible";
-    contacts.className = "hidden";
-  } else {
-    write.className = "hidden";
-  }
+  write.classList.toggle("visible");
+  contacts.classList.add("hidden");
+  Inbox.classList.add("hidden");
 }
+
 function Contacts() {
-  if (contacts.className == "hidden") {
-    contacts.className = "visible";
-    write.className = "hidden";
-  } else {
-    contacts.className = "hidden";
-  }
+  contacts.classList.toggle("visible");
+  write.classList.add("hidden");
+  Inbox.classList.add("hidden");
+}
+
+function Inbox() {
+  Inbox.classList.toggle("visible");
+  write.classList.add("hidden");
+  contacts.classList.add("hidden");
 }

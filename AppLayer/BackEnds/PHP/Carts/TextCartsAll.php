@@ -33,8 +33,8 @@ if (!$Writes) {
         $author = $ub->selectByParameters($Write['WRITE_AUTHOR']);
         // print_r($author);
 
-        echo ("<div class='w-full h-80 relative mx-auto mt-10'>
-        <div class='w-full h-80 left-0 top-0 absolute bg-teal-200 rounded-[2.313rem] '>
+        echo ("<div class='w-full h-80 relative mx-auto mt-10 pt-72'>
+        <div class='w-full h-80 left-0 top-64 relative bg-teal-200 rounded-[2.313rem] '>
         
             <div class='flex flex-row jus' onclick='UpDateAndDelete($id)'>
                 <div>

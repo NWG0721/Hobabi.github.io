@@ -40,9 +40,6 @@
                     <div></div>
                 </li>
                 <li class="Sosia-lMedia">
-                    <div class="text-3xl m-2 mt-3 mx-5">
-                        حبابی
-                    </div>
                 </li>
             </ul>
         </div>

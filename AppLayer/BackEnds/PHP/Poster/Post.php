@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
 <body class="bg-gray-100" dir="rtl">
     <nav class="bg-gray-800 p-4 text-white fixed w-full top-0 z-10 flex justify-evenly items-center">
         <div>
-            <a href="../AdminPanel/AdminPanel.php" class="bg-white p-3 rounded-lg text-black text-left">بازگشت</a>
+            <a href="" onclick="goBack()" class="bg-white p-3 rounded-lg text-black text-left">بازگشت</a>
         </div>
         <div>
             <div class="text-xl font-bold">صفحه حبابی خوان</div>
