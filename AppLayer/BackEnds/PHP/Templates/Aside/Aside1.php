@@ -9,8 +9,6 @@
     <div></div>
     <div></div>
     <div></div>
-    <div></div>
-    <div></div>
 
     <!-- ------------------------------| The Current Music Ended |------------------------------ -->
 </aside>

@@ -40,7 +40,9 @@
                     <div></div>
                 </li>
                 <li class="Sosia-lMedia">
-                    <div></div>
+                    <div class="text-3xl m-2 mt-3 mx-5">
+                        حبابی
+                    </div>
                 </li>
             </ul>
         </div>
@@ -71,11 +73,11 @@
                         </li>
 
                         <li>
-                            <a href="">ارتباط با ما</a>
+                            <a href="./AppLayer/BackEnds/PHP/contactus/ContactUs.php">ارتباط با ما</a>
                         </li>
 
                         <li>
-                            <a href="">درباره ما</a>
+                            <a href="./AppLayer/BackEnds/PHP/about/About.php">درباره ما</a>
                         </li>
                     </ul>
                 </nav>

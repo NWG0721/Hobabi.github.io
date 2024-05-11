@@ -1,6 +1,6 @@
 <?php
 
-class TextsRepository
+class MassageRepository
 {
 
     private function connector()
@@ -14,20 +14,20 @@ class TextsRepository
 
     public function selectAll(): array
     {
-        $query = "SELECT * FROM write_tbl";
+        $query = "SELECT * FROM massage_tbl";
         return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
     }
 
     public function selectPublished(): array
     {
-        $query = "SELECT * FROM write_tbl WHERE WRITE_STATUS = '45'";
-        return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
+        // $query = "SELECT * FROM massage_tbl WHERE WRITE_STATUS = '45'";
+        // return mysqli_fetch_array(Mysqli_query($this->connector(), $query));
 
     }
 
-    public function selectByTitle(string $userName): array
+    public function selectByParameter(string $parameter): array
     {   
-        $query = "SELECT * FROM write_tbl WHERE USER_NAME = '$userName' LIMIT 1";
+        $query = "SELECT * FROM massage_tbl WHERE MASSAGER_NAME = '$parameter' OR MASSAGER_EMAIL = '$parameter' OR MASSAGER_TEXT = '$parameter' OR MASSAGE_DATE = '$parameter' LIMIT 1";
         return Mysqli_query($this->connector(), $query);
     }
 
@@ -45,10 +45,11 @@ class TextsRepository
         }
     }
 
-    public function insertText( $writeTitle, $writePicture, $writeText, $writeAuthor, $writeStatus, $writeType): bool
+    public function insertText( $MASSAGER_NAME, $MASSAGER_EMAIL, $MASSAGER_TEXT, $MASSAGE_DATE): bool
     {
         try {
-            $query = "INSERT INTO `write_tbl` (`WRITE_TITLE`, `WRITE_PIC`, `WRITE_TEXT`, `WRITE_AUTHOR`, `WRITE_STATUS`, `WRITE_TYPE`) VALUES ('$writeTitle', '$writePicture', '$writeText', '$writeAuthor', '$writeStatus', '$writeType');";
+            $query = "INSERT INTO `massage_tbl` (`MASSAGER_NAME`, `MASSAGER_EMAIL`, `MASSAGER_TEXT`, `MASSAGE_DATE`) VALUES ('$MASSAGER_NAME', '$MASSAGER_EMAIL', '$MASSAGER_TEXT', '$MASSAGE_DATE');";
+            // echo("massagerName -> $MASSAGER_NAME | massagerEmail -> $MASSAGER_EMAIL | massagerMassage -> $MASSAGER_TEXT |  massageDate -> $MASSAGE_DATE");
             mysqli_query($this->connector(), $query);
             return true;
 
@@ -59,10 +60,10 @@ class TextsRepository
         }
     }
 
-    public function deleteUser(int $userId): bool
+    public function deleteUser(int $MASSAGE_ID): bool
     {
         try {
-            $query = "DELETE FROM write_tbl WHERE USER_ID = '$userId' ";
+            $query = "DELETE FROM massage_tbl WHERE MASSAGE_ID = '$MASSAGE_ID' ";
             mysqli_query($this->connector(), $query);
             return true;
 

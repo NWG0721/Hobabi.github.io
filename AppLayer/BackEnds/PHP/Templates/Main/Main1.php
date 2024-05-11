@@ -1,18 +1,17 @@
 <?php
 
-include('../../../../../DataLayer/TextsRepository.php');
+include ('./DataLayer/TextsRepository.php');
 
 ?>
 
 <main>
-        <p id="AddressBar">Address</p>
-        <div class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-xl h-96 pb-9">
-                <div class="justify-center w-auto mx-10 bg-sky-500 mt-10 flex flex-col rounded-xl h-96">
-                        <?php
+        <div class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-xl pb-9 px-52 mb-10">
 
-                        
+        <?php 
+       
+       include('./AppLayer/BackEnds/PHP/Carts/TextCarts.php');
+        ?>
 
-                        ?>
-                </div>
+
         </div>
 </main>
