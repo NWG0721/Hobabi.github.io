@@ -58,10 +58,10 @@ class MassageRepository
         }
     }
 
-    public function deleteUser(int $MASSAGE_ID): bool
+    public function deleteMessage(int $MASSAGE_ID): bool
     {
         try {
-            $query = "DELETE FROM massage_tbl WHERE MASSAGE_ID = '$MASSAGE_ID' ";
+            $query = "DELETE FROM massage_tbl WHERE MASSAGE_ID = $MASSAGE_ID ";
             mysqli_query($this->connector(), $query);
             return true;
 

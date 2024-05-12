@@ -11,18 +11,28 @@ function UpDateAndDelete(id) {
 let write = document.getElementById("Writes");
 let contacts = document.getElementById("Contacts");
 let InBox = document.getElementById("InBox");
+let Collection = document.getElementById("Collection");
 function Writes() {
-  write.className = "visible";
+  write.className = "";
   contacts.className = "hidden";
   InBox.className = "hidden";
+  Collection.className = "hidden"
 }
 function Contacts() {
   write.className = "hidden";
-  contacts.className = "visible";
+  contacts.className = "";
   InBox.className = "hidden";
+  Collection.className = "hidden"
 }
 function _inbox() {
   write.className = "hidden";
   contacts.className = "hidden";
   InBox.className = "";
+  Collection.className = "hidden"
+}
+function _Collection() {
+  write.className = "hidden";
+  contacts.className = "hidden";
+  InBox.className = "hidden";
+  Collection.className = ""
 }

@@ -1,7 +1,11 @@
 <?php
 include './../../../../DataLayer/TextsRepository.php';
 include './../../../../DataLayer/ContactsRepository.php';
+include './../../../../DataLayer/MassageRepository.php';
+include './../../../../DataLayer/TypeRepository.php';
 $db = new TextsRepository();
+$Mdb = new MassageRepository();
+$tyDB = new TypeRepository();
 if (isset($_POST['Delete'])) {
     if (isset($_GET['ID'])) {
         $id = $_GET['ID'];
@@ -12,6 +16,20 @@ if (isset($_POST['Delete'])) {
         echo "<script>alert('خطا در حذف!');</script>";
     }
 }
+if (isset($_POST['Delete-MSG'])) {
+    if (isset($_GET['ID'])) {
+        $id = $_GET['ID'];
+        $Mdb->deleteMessage($id);
+        echo "<script>alert('موفقیت آمیز حذف شد!');</script>";
+    } else {
+        echo "<script>alert('خطا در حذف!');</script>";
+    }
+}
+if (isset($_POST['Save-Collection'])) {
+$tyDB-> insertType($_POST['new_Collection']);
+}
+
+
 $cDB = new ContactsRepository();
 $res = $cDB->select();
 
@@ -59,7 +77,7 @@ $res = $cDB->select();
                         </div>
                         <div
                             class="m-15 mt-16 text-xl text-amber-300 hover:text-2xl p-4 px-20 border-y-2 border-cyan-300 cursor-pointer">
-                            <li onclick="">دسته بندی ها</li>
+                            <li onclick="_Collection()">دسته بندی ها</li>
                         </div>
                         <div
                             class="m-15 mt-16 text-xl text-amber-300 hover:text-2xl p-4 px-20 border-y-2 border-cyan-300 cursor-pointer">
@@ -79,28 +97,28 @@ $res = $cDB->select();
             </div>
 
 
-            <div class="hidden" id="Inbox">
+
+            <div class="" id="Collection">
                 <div
-                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
-                    <div class="container mx-auto p-20 pt-96">
-                        <div class="grid grid-cols-1 gap-4">
-                            <?php
-                            include '../../../../DataLayer/MassageRepository.php';
-                            $msgDB = new MassageRepository();
-                            include '../Carts/MessageCarts.php';
-                            ?>
-                        </div>
-                    </div>
+                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-row rounded-2xl big-W pb-10 pt-20 overflow-auto ">
+                    <form action="#" method="post">
+                        <label for="new_Collection " class="text-3xl m-3">افزودن تازه»»--»</label>
+                        <input type="text" name="new_Collection" id="new_Collection"
+                            class="text-3xl mx-20 h-20 rounded-3xl w-60">
+                        <br>
                 </div>
                 <div>
                     <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
                         <div>
+
                             <li>
-                                <button onclick="Redirect()"
-                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودن</button>
+                                <button type="submit" name="Save-Collection"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودان</button>
+                                </form>
                             </li>
                         </div>
                         <div>
+
                             <li>
                                 <button onclick="Refresh()"
                                     class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">نوآوری</button>
@@ -108,14 +126,8 @@ $res = $cDB->select();
                         </div>
                         <div>
                             <li>
-                                <button onclick="UpDatediraction(<?php echo $id; ?>)"
-                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">آرایش</button>
-                            </li>
-                        </div>
-                        <div>
-                            <li>
                                 <form action="#" method="Post">
-                                    <button type="submit" name="Delete"
+                                    <button type="submit" name="Delete-MSG"
                                         class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
                                 </form>
                             </li>
@@ -125,6 +137,57 @@ $res = $cDB->select();
 
             </div>
 
+
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+
+            <div class="hidden" id="InBox">
+                <div
+                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
+                    <div class="container mx-auto p-20 pt-96">
+                        <div class="grid grid-cols-1 gap-4">
+                            <?php
+                            include '../Carts/MessageCarts.php';
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
+                        <div>
+                            <li>
+                                <button onclick="Refresh()"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">نوآوری</button>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <form action="#" method="Post">
+                                    <button type="submit" name="Delete-MSG"
+                                        class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
+                                </form>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------------------------- -->
             <div class="" id="Writes">
                 <div
                     class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-col rounded-2xl big-W pb-10 overflow-auto ">
@@ -172,7 +235,7 @@ $res = $cDB->select();
                 <form action="#" method="post">
                     <div class="w-full relative">
                         <div
-                            class="w-full h-[655px] left-0 top-16 absolute bg-cyan-400 rounded-[52px] border border-black">
+                            class="w-full h-[40rem] left-0 top-16 absolute bg-cyan-400 rounded-[52px] border border-black">
                         </div>
                         <div
                             class="w-full h-[215px] left-0 top-[504px] absolute bg-sky-800 rounded-bl-[52px] rounded-br-[52px]">
