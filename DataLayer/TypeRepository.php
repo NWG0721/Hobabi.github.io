@@ -41,7 +41,7 @@ class TypeRepository
         }
     }
 
-    public function deleteUser(int $userId): bool
+    public function deleteType(int $userId): bool
     {
         $query = "DELETE FROM type_tbl WHERE TYP_ID = '$userId'";
         if (mysqli_query($this->connector(), $query)) {

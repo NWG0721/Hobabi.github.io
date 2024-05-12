@@ -23,16 +23,18 @@ if (isset($_POST['Delete-MSG'])) {
         echo "<script>alert('موفقیت آمیز حذف شد!');</script>";
     } else {
         echo "<script>alert('خطا در حذف!');</script>";
-    }
+    }       
 }
 if (isset($_POST['Save-Collection'])) {
-$tyDB-> insertType($_POST['new_Collection']);
+    $tyDB->insertType($_POST['new_Collection']);
+}
+if (isset($_POST['Delete-Collector']) && isset($_POST['Collector'])) {
+    $tyDB->deleteType($_POST['Collector']);
 }
 
 
 $cDB = new ContactsRepository();
-$res = $cDB->select();
-
+$contentsResult = $cDB->select();
 ?>
 
 <!DOCTYPE html>
@@ -98,14 +100,23 @@ $res = $cDB->select();
 
 
 
-            <div class="" id="Collection">
+            <div class="hidden" id="Collection">
                 <div
-                    class="justify-center w-auto mx-10 bg-sky-300 mt-10 flex flex-row rounded-2xl big-W pb-10 pt-20 overflow-auto ">
+                    class="justify-center w-auto mx-10 bg-sky-300 h-56 mt-10 flex flex-row rounded-2xl big-W pb-10 pt-20 overflow-auto ">
                     <form action="#" method="post">
                         <label for="new_Collection " class="text-3xl m-3">افزودن تازه»»--»</label>
                         <input type="text" name="new_Collection" id="new_Collection"
                             class="text-3xl mx-20 h-20 rounded-3xl w-60">
                         <br>
+                        <select name="Collector" id="Collector">
+                            <?php
+                            $result = $tyDB->selectAll();
+                            foreach ($result as $res) {
+                                echo ("<option value='" . $res['TYP_ID'] . "'>" . $res['TYP_NAME'] . "</option>");
+                            }
+                            ?>
+                        </select>
+
                 </div>
                 <div>
                     <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">
@@ -114,7 +125,7 @@ $res = $cDB->select();
                             <li>
                                 <button type="submit" name="Save-Collection"
                                     class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">افزودان</button>
-                                </form>
+
                             </li>
                         </div>
                         <div>
@@ -126,9 +137,8 @@ $res = $cDB->select();
                         </div>
                         <div>
                             <li>
-                                <form action="#" method="Post">
-                                    <button type="submit" name="Delete-MSG"
-                                        class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
+                                <button type="submit" name="Delete-Collector"
+                                    class="bg-cyan-400 p-3 px-4 rounded-2xl shadow-lg border-cyan-700 border-2 hover:scale-125">پاکیدن</button>
                                 </form>
                             </li>
                         </div>
@@ -242,51 +252,55 @@ $res = $cDB->select();
                         </div>
                         <div
                             class="w-[246px] h-[313px] left-[38px] top-[150px] absolute bg-teal-600 rounded-[48px] flex flex-col justify-center">
-                            <img src="<?php echo $res['CONTENTS_HEADPIC']; ?>" alt="">
+                            <img src="<?php echo $contentsResult['CONTENTS_HEADPIC']; ?>" alt="">
                             <input type="file">
                         </div>
                         <div
                             class="left-[709px] top-[89px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed1" name="feed1" type="text" required placeholder="فید 1"
-                                value="<?php echo $res['CONTENTS_FEEDER1']; ?>"
+                                value="<?php echo $contentsResult['CONTENTS_FEEDER1']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[709px] top-[160px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed2" name="feed2" type="text" required placeholder="فید 2"
-                                value="<?php echo $res['CONTENTS_FEEDER2']; ?>"
+                                value="<?php echo $contentsResult['CONTENTS_FEEDER2']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[708px] top-[256px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed3" name="feed3" type="text" required placeholder="فید 3"
-                                value="<?php echo $res['CONTENTS_FEEDER3']; ?>"
+                                value="<?php echo $contentsResult['CONTENTS_FEEDER3']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
+                        <!-- ------------------------------------------------------------------------------------------ -->
                         <div
-                            class="left-[659px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
+                            class="left-[660px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
                             <input id="feed4" name="feed4" type="text" required placeholder="فید 4"
-                                value="<?php echo $res['CONTENTS_FOOTER']; ?>"
-                                class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
-                        </div>
-                        <div
-                            class="left-[226px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
-                            <input id="feed5" name="feed5" type="text" required placeholder="فید 5"
-                                value="<?php echo $res['CONTENTS_FOOTER1']; ?>"
-                                class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
-                        </div>
-                        <div
-                            class="left-[226px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
-                            <input id="feed6" name="feed6" type="text" required placeholder="فید 6"
-                                value="<?php echo $res['CONTENTS_FOOTER2']; ?>"
+                                value="<?php echo $contentsResult['CONTENTS_FOOTER']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
                         <div
                             class="left-[660px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
-                            <input id="feed7" name="feed7" type="text" required placeholder="فید 7"
-                                value="<?php echo $res['CONTENTS_FOOTER3']; ?>"
+                            <input id="feed5" name="feed5" type="text" required placeholder="فید 5"
+                                value="<?php echo $contentsResult['CONTENTS_FOOTER1']; ?>"
                                 class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
                         </div>
+
+                        <div
+                            class="left-[226px] top-[563px] absolute text-right text-black text-xl font-normal font-['Inter']">
+                            <input id="feed7" name="feed7" type="text" required placeholder="فید 7"
+                                value="<?php echo $contentsResult['CONTENTS_FOOTER3']; ?>"
+                                class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
+                        </div>
+                        <div
+                            class="left-[226px] top-[515px] absolute text-right text-black text-xl font-normal font-['Inter']">
+                            <input id="feed6" name="feed6" type="text" required placeholder="فید 6"
+                                value="<?php echo $contentsResult['CONTENTS_FOOTER2']; ?>"
+                                class="block w-full rounded-md border-2 py-1.5 px-2 text-center text-cyan-600 shadow-lg ring-2 ring-inset ring-cyan-900 placeholder:text-sky-300 placeholder:text-center focus:ring-3 focus:ring-inset focus:ring-sky-600 sm:text-lg sm:leading-6">
+                        </div>
+
+
                     </div>
                     <div>
                         <ul class="flex justify-around text-center flex-row bg-sky-300 mt-10 mx-20 rounded-3xl ">

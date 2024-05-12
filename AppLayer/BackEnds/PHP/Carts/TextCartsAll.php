@@ -1,6 +1,6 @@
 <?php
 include ('./../../../../DataLayer/UsersRepository.php');
-include ('./../../../../DataLayer/TypeRepository.php');
+
 $tB = new TypeRepository();
 $ub = new UsersRepository();
 $db = new TextsRepository();
@@ -56,13 +56,14 @@ if (!$Writes) {
         
             <div
                 class='w-full h-[3.313rem] left-0 top-[16.688rem] absolute bg-sky-900 rounded-bl-[2.313rem] rounded-br-[2.313rem] flex-row flex justify-around'>
-                <div class='left-[383px] top-[279px] text-right text-yellow-400 text-2xl font-normal'>$date</div>
+                <div class='left-[383px] top-[279px] text-right text-yellow-400 text-2xl font-normal cursor-default ' onclick='GotoCategory($id)'>$date</div>
                 <div class='left-[383px] top-[279px] text-right text-yellow-400 text-2xl font-normal'>" . $type['TYP_NAME'] . "</div>
                 <div class='left-[805px] top-[279px] text-right text-yellow-400 text-2xl font-normal'>$status</div>
                 <div class='left-[27px] top-[279px] text-right text-yellow-400 text-2xl font-normal'>" . $author[0]['USER_NAME'] . "</div>
             </div>
         </div>
-        </div>");
+        </div>
+            ");
     }
 
 }

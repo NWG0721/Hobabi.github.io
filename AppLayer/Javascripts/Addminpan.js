@@ -2,12 +2,14 @@ function Redirect() {
   window.location.replace("../AppWrite/AddWrite.php");
 }
 function Refresh() {
-  window.location.replace("../AdminPanel/AdminPanel.php");
+  window.location.Refresh();
 }
 function UpDateAndDelete(id) {
   window.location.replace("../AdminPanel/AdminPanel.php?ID=" + id);
 }
-
+function GotoCategory() {
+  window.location.replace("../Categories/Data");
+}
 let write = document.getElementById("Writes");
 let contacts = document.getElementById("Contacts");
 let InBox = document.getElementById("InBox");
